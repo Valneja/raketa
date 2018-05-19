@@ -47,15 +47,18 @@
 .overlay {
   z-index: 3;
   position: relative;
-  height: 33%;
-  width: 33%;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 170px;
+  width: 170px;
+  background-color: rgb(204, 204, 204, 1);
+  transform: 1s;
 }
 
 .overlay1 {
   z-index: 2;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   height: 510px;
   width: 510px;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
