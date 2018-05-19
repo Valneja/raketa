@@ -98,6 +98,17 @@ body{
 }
 .winner-name {
 	text-align: center;
-	
+
     display: none;
+}
+
+.login-button {
+	width: 50% !important;
+
+}
+
+
+.login-button-divv {
+	width: 50% !important;
+	align-items:  center;
 }
