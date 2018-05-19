@@ -36,6 +36,34 @@
     background-color: rgba(0, 0, 0, 1);
 }
 
+<<<<<<< HEAD
+.parent {
+  height: 0;
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.child > * {
+	width:50%;
+	font-size: 200%;
+}
+
+
+
+
+
+
+
+
+
+
+
+=======
  {
     z-index: 2;
     position: absolute;
@@ -62,3 +90,4 @@
   width: 510px;
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
+>>>>>>> 0b1767ec1d96ebddbbeeb17204b69290bd286fcd
