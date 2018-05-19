@@ -21,6 +21,7 @@ $(document).ready(function () {
     $("#proceed").show();
 
     $(".loading-finish").hide();
+    
     $(".winner-name").show();
   }, 1000);
 
