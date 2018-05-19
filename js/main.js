@@ -16,4 +16,12 @@ $(document).ready(function () {
             $(children.get(ran)).css('opacity', 0);
         }, (i+1) * 3000); 
     }
+
+    setTimeout(function() {
+    $("#proceed").show();
+
+    $(".loading-finish").hide();
+    $(".winner-name").show();
+  }, 1000);
+
 });
