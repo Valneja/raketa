@@ -14,23 +14,17 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 75%;
-	height: 600px;
-	width: 1200px;
+    margin-top: 20px;
+	width: 510px;
+	height: 510px;
+    position: relative;
 }
 
-.overlay {
-  position: absolute;
-
-	height: 100%;
-	width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
+.image {
+    object-fit: cover;
+    width: 510px;
+    height: 510px;
+    position: absolute;
 }
 
 .login-body {
@@ -68,5 +62,30 @@ body{
 
 
 
+ {
+    z-index: 2;
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    background-color: rgba(0, 0, 0, 0);
+}
 
+.overlay {
+  z-index: 3;
+  position: relative;
+  height: 170px;
+  width: 170px;
+  background-color: rgb(204, 204, 204, 1);
+  transform: 1s;
+}
 
+.overlay1 {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 510px;
+  width: 510px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+>>>>>>> d7c0a96da3e229c011b2615ddc53153161fa3342

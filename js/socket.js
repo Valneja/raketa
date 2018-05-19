@@ -5,10 +5,10 @@ console.log("Socket setup");
 socket.on('connect', () => {
     console.log("I have connected to socket");
     console.log("fdsf");
-    socket.emit('TEST', 'me', 'test msg');
+    socket.emit('logon', 'me', 'test msg');
 });
-socket.on('event', (data) => {
-    console.log("Event");
+socket.on('players', (data) => {
+    console.log("players", data);
 });
 socket.on('disconnect', () => {
     console.log("I have disconnected");
