@@ -50,7 +50,7 @@
   height: 170px;
   width: 170px;
   background-color: rgb(204, 204, 204, 1);
-  transform: 1s;
+  transition: 1s;
 }
 
 .overlay1 {
