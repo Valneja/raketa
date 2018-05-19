@@ -12,8 +12,21 @@
 	width: 75%;
 }
 
+.parent {
+  height: 0;
+  position: relative;
+}
 
+.child {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
 
+.child > * {
+	width:50%;
+	font-size: 200%;
+}
 
 
 
