@@ -97,6 +97,9 @@ body{
 
 }
 
+.btn-md{
+  margin-top: 2px;
+}
 
 .login-button-divv {
 	width: 50% !important;
