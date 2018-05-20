@@ -28,10 +28,51 @@
 </head>
 
 <body>
+  <div id="login">
+    <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel-body">
+                    <div class="form">
+                        <form accept-charset="UTF-8" role="form">
+                            <fieldset>
+                                <h2>What's your name?</h2>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Name" name="name" type="text">
+                                </div>
+                                    <input class="btn btn-md btn-block " type="submit" value="Login">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <!-- body-->
-  <div class="photo-container">
+
+  <div id="waiting">
+     <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel-body">
+                    <img src="assets/loading.gif" class="loading">
+                      <h2>Waiting for game</h2>
+
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action ">Mihy</a>
+                        <a href="#" class="list-group-item list-group-item-action">Leny</a>
+                        <a href="#" class="list-group-item list-group-item-action">Roky</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+  <div id="game">
+    <div class="photo-container">
     <img id="imgContainer"  alt="Dubai" class="image">
     <div class="overlay1">
       <span class="overlay" id="overlay-1"></span>
@@ -50,7 +91,7 @@
 
       <div class="panel-body" style="width:100%">
         <h1 class="no-margin" align="center">
-            <span class="semi-bold">Kje pa sem?!</span>
+            <span class="semi-bold">Where am I?</span>
           </h1>
         <button type="button" style="width:100%" class="btn btn-md">Vgorič</button>
         <button type="button" style="width:100%" class="btn btn-md">Ribnica</button>
@@ -59,6 +100,31 @@
       </div>
     </div>
   </div>
+  </div>
+
+
+  <div id="end">
+    <div class="container">
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel-body">
+                    <h2>The winner is...</h2>
+                    <img src="assets/loading.gif" class="loading-finish">
+
+                    <div class="winner-name">
+                        <h3>Mihy</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <!-- body-->
+  
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="node_modules/socket.io-client/dist/socket.io.js"></script>

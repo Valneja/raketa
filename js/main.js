@@ -45,7 +45,7 @@ $(document).ready(function () {
         $(".loading-finish").hide();
         
         $(".winner-name").show();
-    }, 1000);
+    }, 2000);
 
     $("#imgContainer").attr("src", images[0].url);
       
