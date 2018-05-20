@@ -1,12 +1,15 @@
 
-var express = require('express');  
-var app = express();  
-var server = require('http').createServer(app);  
+var express = require('express');
+var app = express();
+var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var path = require('path');
 
-let players = [];
+app.use(express.static(__dirname)); // Current directory is root
 
-app.use(express.static(__dirname + './../'));
+players= [];
+server.listen(3000);
+console.log('Listening on port 3000');
 
 io.on('connection', socket => {
    console.log('connection');
@@ -34,7 +37,4 @@ io.on('connection', socket => {
 			}
 	  }
   })
-});
-server.listen(3000, () => {
-	console.log("Listening on 3000");
 });
