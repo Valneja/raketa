@@ -34,15 +34,15 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel-body">
                     <div class="form">
-                        <form accept-charset="UTF-8" role="form">
+                        
                             <fieldset>
                                 <h2>What's your name?</h2>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Name" name="name" type="text">
+                                    <input class="form-control" id="player-name" placeholder="Name" name="name" type="text">
                                 </div>
-                                    <input class="btn btn-md btn-block " type="submit" value="Login">
+                                <button class="btn btn-md btn-block"  id="login-button">Login</button>
+                                   <!-- <input class="btn btn-md btn-block" id="login-button" type="submit" value="Login">-->
                             </fieldset>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -60,9 +60,9 @@
                       <h2>Waiting for game</h2>
 
                     <ul class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action ">Mihy</a>
+                        <!--<a href="#" class="list-group-item list-group-item-action ">Mihy</a>
                         <a href="#" class="list-group-item list-group-item-action">Leny</a>
-                        <a href="#" class="list-group-item list-group-item-action">Roky</a>
+                        <a href="#" class="list-group-item list-group-item-action">Roky</a>-->
                     </ul>
                 </div>
             </div>
@@ -124,11 +124,10 @@
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <!-- body-->
-  
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+ 
   <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
-  <script src="js/socket.js"></script>
   <script src="js/main.js"></script>
 
 </body>

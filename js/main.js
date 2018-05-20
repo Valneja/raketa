@@ -26,10 +26,11 @@ var images =  [
 var name = '';
 var players = [];
 var question;
-var socket = io.connect('http://localhost:3000', {reconnect: true});
-
+ var socket;
 
 var login = function(_name) {
+   socket = io.connect('http://localhost:3000', {reconnect: true});
+
     console.log("Socket setup");
     name = _name
     socket.on('connect', () => {
@@ -42,6 +43,10 @@ var login = function(_name) {
         console.log("->players", players);
     });
     socket.on('start', (data) => {
+        document.getElementById("waiting").style.display="none";
+        document.getElementById("game").style.display="block";
+
+
         question = 0;
         console.log('BEGIN');
     });
@@ -54,7 +59,6 @@ var login = function(_name) {
         console.log("I have disconnected");
     });
 }
-login();
 
 var answer = function(index) {
     socket.emit('answer', index === images[question].answer);
@@ -88,4 +92,18 @@ $(document).ready(function () {
 
     $("#imgContainer").attr("src", images[0].url);
       
+
+
+      $("#login-button").click(function(){
+        login( $("#player-name").val());   
+       //$("#login").style.display="none";
+       document.getElementById("login").style.display="none";
+
+       document.getElementById("waiting").style.display="block";
+
+
+      });
+
+
 });
+
