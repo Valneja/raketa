@@ -23,6 +23,45 @@ var images =  [
     }
 ];
 
+var name = '';
+var players = [];
+var question;
+var socket = io.connect('http://localhost:3000', {reconnect: true});
+
+
+var login = function(_name) {
+    console.log("Socket setup");
+    name = _name
+    socket.on('connect', () => {
+        console.log("I have connected to socket");
+        console.log("fdsf");
+        socket.emit('logon', name, 'ready');
+    });
+    socket.on('players', (data) => {
+        players = data;
+        console.log("->players", players);
+    });
+    socket.on('start', (data) => {
+        question = 0;
+        console.log('BEGIN');
+    });
+    socket.on('next', data => {
+        question++;
+        $("#imgContainer").attr("src", images[question].url);
+        var children = $('.overlay1').children('.overlay').css('opacity', 1);
+    });
+    socket.on('disconnect', () => {
+        console.log("I have disconnected");
+    });
+}
+login();
+
+var answer = function(index) {
+    socket.emit('answer', index === images[question].answer);
+    if ( index === images[question].answer ) {
+    }
+}
+
 $(document).ready(function () {
     console.log("reeady", $('.overlay1')[0]);
 
@@ -45,7 +84,7 @@ $(document).ready(function () {
         $(".loading-finish").hide();
         
         $(".winner-name").show();
-    }, 2000);
+    }, 1000);
 
     $("#imgContainer").attr("src", images[0].url);
       

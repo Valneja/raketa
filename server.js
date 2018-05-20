@@ -20,12 +20,19 @@ io.on('connection', socket => {
 		name: from,
 		score: 0
 	});
+	io.emit("players", players);
 	console.log('Login: ', from, players);
 	if ( players.length === 2) {
-		console.log("Play!");
-		io.emit("players", players);
+		console.log("BEGINN");
+		io.emit("start", players);
 	}
   });
+
+  socket.on('answer', data => {
+	  if ( data ) {
+		  io.emit('next');
+	  }
+  })
 
   socket.on('disconnect', function() {
 	  console.log(socket.name, socket.id);
