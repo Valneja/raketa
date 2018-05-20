@@ -7,14 +7,14 @@ var images =  [
         answer: 2
     },
     {
-        url: 'https://services.sentinel-hub.com/ogc/wms/1352ed15-d977-4d89-b0fa-f97964c57178?service=WMS&request=GetMap&layers=TRUE_COLOR&styles=&format=image/png&transparent=true&version=1.1.1&showlogo=false&name=Simple WMS instance&height=512&width=512&pane=activeLayer&maxcc=100&time=2018-05-18/2018-05-18&srs=EPSG:3857&bbox=-12406035.438797247,4422340.708467157,-12366899.680315236,4461476.4669491695',
-        options: ['Sahara', 'Fish River Canyon', 'Niagara Gorge', 'Grand Canyon'],
+        url: './assets/egypt.jpg',
+        options: ['Sahara', 'Maroco', 'Iran', 'Egypt'],
         answer: 0
     }, 
     {
-        url: 'https://services.sentinel-hub.com/ogc/wms/1352ed15-d977-4d89-b0fa-f97964c57178?service=WMS&request=GetMap&layers=TRUE_COLOR&styles=&format=image/png&transparent=true&version=1.1.1&showlogo=false&name=Simple WMS instance&height=512&width=512&pane=activeLayer&maxcc=100&time=2018-05-18/2018-05-18&srs=EPSG:3857&bbox=-12406035.438797247,4422340.708467157,-12366899.680315236,4461476.4669491695',
-        options: ['Sahara', 'Fish River Canyon', 'Niagara Gorge', 'Grand Canyon'],
-        answer: 0
+        url: './assets/ital1y.jpg',
+        options: ['France', 'Spain', 'Italy', 'Slovenia'],
+        answer: 2
     },
     {
         url: 'https://services.sentinel-hub.com/ogc/wms/1352ed15-d977-4d89-b0fa-f97964c57178?service=WMS&request=GetMap&layers=TRUE_COLOR&styles=&format=image/png&transparent=true&version=1.1.1&showlogo=false&name=Simple WMS instance&height=512&width=512&pane=activeLayer&maxcc=100&time=2018-05-18/2018-05-18&srs=EPSG:3857&bbox=-12406035.438797247,4422340.708467157,-12366899.680315236,4461476.4669491695',
@@ -44,11 +44,18 @@ var login = function(_name) {
     socket.on('start', (data) => {
         question = 0;
         console.log('BEGIN');
+        $("#answerBtns").each(function (index, element) {
+            $(element).text(images[question].options[index]);
+        });
     });
     socket.on('next', data => {
         question++;
         $("#imgContainer").attr("src", images[question].url);
         var children = $('.overlay1').children('.overlay').css('opacity', 1);
+        $("#answerBtns").each(function (index, element) {
+            $(element).text(images[question].options[index]);
+        });
+
     });
     socket.on('disconnect', () => {
         console.log("I have disconnected");
